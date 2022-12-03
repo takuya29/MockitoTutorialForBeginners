@@ -5,6 +5,7 @@
 plugins {
     id 'java'
     id 'maven-publish'
+    id 'checkstyle'
 }
 
 repositories {
@@ -33,4 +34,8 @@ publishing {
             from(components.java)
         }
     }
+}
+
+checkstyle {
+    toolVersion = '10.5.0'
 }
