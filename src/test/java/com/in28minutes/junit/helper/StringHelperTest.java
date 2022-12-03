@@ -1,11 +1,16 @@
 package com.in28minutes.junit.helper;
 
 import junit.framework.TestCase;
+import org.junit.After;
 import org.junit.Test;
 
 public class StringHelperTest extends TestCase {
 
-    StringHelper helper = new StringHelper();
+    private StringHelper helper;
+
+    public void setUp() {
+        helper = new StringHelper();
+    }
 
     @Test
     public void testTruncateAInFirst2Positions_Ainfirst2Positions() {
@@ -43,8 +48,8 @@ public class StringHelperTest extends TestCase {
         assertFalse(helper.areFirstAndLastTwoCharactersTheSame("A"));
     }
 
-    @Test
-    public void testAreFirstAndLastTwoCharactersTheSame_TwoCharacters() {
-        assertTrue(helper.areFirstAndLastTwoCharactersTheSame("AB"));
+    @After
+    public void tearDown() {
+        System.out.println("Test finished");
     }
 }
