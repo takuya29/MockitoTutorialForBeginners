@@ -10,9 +10,6 @@ public class StringHelperTest extends TestCase {
     @Test
     public void testTruncateAInFirst2Positions_Ainfirst2Positions() {
         assertEquals("CD", helper.truncateAInFirst2Positions("AACD"));
-//        assertEquals("CD", helper.truncateAInFirst2Positions("ACD"));
-//        assertEquals("CDEF", helper.truncateAInFirst2Positions("CDEF"));
-//        assertEquals("CDAA", helper.truncateAInFirst2Positions("CDAA"));
     }
 
     @Test
@@ -31,4 +28,23 @@ public class StringHelperTest extends TestCase {
         assertEquals("CDAA", helper.truncateAInFirst2Positions("CDAA"));
     }
 
+    @Test
+    public void testAreFirstAndLastTwoCharactersTheSame_BasicNegativeScenario() {
+        assertFalse(helper.areFirstAndLastTwoCharactersTheSame("ABCD"));
+    }
+
+    @Test
+    public void testAreFirstAndLastTwoCharactersTheSame_BasicPositiveScenario() {
+        assertTrue(helper.areFirstAndLastTwoCharactersTheSame("ABAB"));
+    }
+
+    @Test
+    public void testAreFirstAndLastTwoCharactersTheSame_SingleCharacter() {
+        assertFalse(helper.areFirstAndLastTwoCharactersTheSame("A"));
+    }
+
+    @Test
+    public void testAreFirstAndLastTwoCharactersTheSame_TwoCharacters() {
+        assertTrue(helper.areFirstAndLastTwoCharactersTheSame("AB"));
+    }
 }
