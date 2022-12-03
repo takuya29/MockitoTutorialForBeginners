@@ -1,14 +1,22 @@
 package com.in28minutes.junit.helper;
 
-import junit.framework.TestCase;
-import org.junit.After;
-import org.junit.Test;
+import org.junit.*;
 
-public class StringHelperTest extends TestCase {
+import static org.junit.Assert.*;
+
+
+public class StringHelperTest {
 
     private StringHelper helper;
 
+    @BeforeClass
+    public static void beforeClass() {
+        System.out.println("Before Class");
+    }
+
+    @Before
     public void setUp() {
+        System.out.println("Setup");
         helper = new StringHelper();
     }
 
@@ -50,6 +58,11 @@ public class StringHelperTest extends TestCase {
 
     @After
     public void tearDown() {
-        System.out.println("Test finished");
+        System.out.println("TearDown");
+    }
+
+    @AfterClass
+    public static void afterClass() {
+        System.out.println("After Class");
     }
 }
